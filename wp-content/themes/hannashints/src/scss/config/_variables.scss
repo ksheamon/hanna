@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,400i,700,700i');
+
+@font-face {
+	font-family: "Baskerville";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../src/fonts/Baskerville/Baskerville.ttf") format("ttf"),
+	     url("../src/fonts/Baskerville/Baskerville.eot") format("eot"),
+	     url("../src/fonts/Baskerville/Baskerville.woff2") format("woff2"),
+	     url("../fonts/Baskerville/Baskerville.woff") format("woff");
+}
+
+$font-serif: "Baskerville", serif;
+$font-sans: "Montserrat", sans-serif;
+$font-script: "Great Vibes", cursive;
+
+//Colors 
+$_dkgrey: #3f3f3f;
+$_mdgrey: #9f9f9f;
+$_ltgrey: #ececec;
+$_coral: #fe6f67;
+
+$breakpoint-tiny: 320px;
+$breakpoint-small: 767px;
+$breakpoint-medium: 959px;
+$breakpoint-large: 1240px;
+$breakpoint-huge: 1799px;
+
+$base-font: "Montserrat", sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.2;
+
+//Use assigned color vars for other scss files
+$color-text: $_dkgrey;
+$color-heading: $_dkgrey;
+$color-accent: $_coral;
+$color-footer: $_ltgrey;
