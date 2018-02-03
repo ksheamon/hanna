@@ -40,7 +40,10 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination();
+			the_posts_pagination(array(
+				'prev_text' => __( '<<', 'textdomain' ),
+    			'next_text' => __( '>>', 'textdomain' ),
+			));
 
 		else :
 

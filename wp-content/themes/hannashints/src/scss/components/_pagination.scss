@@ -1,0 +1,24 @@
+.pagination {
+	margin-bottom: 50px;
+	
+	.nav-links {
+		text-align: center;
+
+		> span,
+		> a {
+			padding: 15px;
+			display: inline-block;
+			border: 3px solid $color-pagination;
+			margin: 0 5px;
+
+			&.current {
+				color: #fff;
+				background: $color-pagination;
+			}
+
+			&.dots {
+				border-color: $color-accent;
+			}
+		}
+	}
+}

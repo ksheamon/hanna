@@ -163,7 +163,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 **/
 
 function hannashints_custom_excerpt_length( $length ) {
-    return 150;
+    return 85;
 }
 add_filter( 'excerpt_length', 'hannashints_custom_excerpt_length', 999 );
 
@@ -173,7 +173,7 @@ add_filter( 'excerpt_length', 'hannashints_custom_excerpt_length', 999 );
 
 function hannashints_new_excerpt_more($more) {
     global $post;
-    return '... <br><br><a class="btn" href="'. get_permalink($post->ID) . '">Continue Reading</a>';
+    return '... <br><br><span class="aligncenter"><a class="btn" href="'. get_permalink($post->ID) . '">Continue Reading</a></span>';
 }
 add_filter('excerpt_more', 'hannashints_new_excerpt_more');
 

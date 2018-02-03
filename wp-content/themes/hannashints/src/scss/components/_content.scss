@@ -1,0 +1,37 @@
+.content-tags {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 200;
+		color: $color-tags;
+
+		&:not(:last-child) {
+			&:after {
+				content: ", ";
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.content-title {
+	color: $color-heading;
+	font-family: $font-serif;
+	font-size: 48px;
+	margin: 1rem 0;
+
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+.content-date {
+	font-size: 18px;
+	text-transform: uppercase;
+	color: $color-accent;
+	font-weight: 400;
+}

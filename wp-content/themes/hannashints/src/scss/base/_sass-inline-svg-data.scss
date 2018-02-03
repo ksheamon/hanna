@@ -1,0 +1,4 @@
+@function arrow-r($fillcolor, $strokecolor){ @return "data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='#{$fillcolor}'%3E%3Cpath d='M59.6 166.5L130 99.8 59.6 33.5V6.7l80.9 78v30.6l-80.9 78v-26.8z'/%3E%3C/svg%3E";}
+
+
+$svg-map: ('arrow-r': ('name': 'arrow-r', 'folder': 'svgs'),);

@@ -1,0 +1,24 @@
+article {
+	.article-meta {
+		margin-bottom: 30px;
+	}
+
+	.article-img {
+		img {
+			width: 100%;
+		}
+	}
+
+	.article-content {
+		margin-top: 50px;
+		line-height: 30px;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		margin: 56px 0;
+		height: 1px;
+		border-bottom: 1px dashed $color-hr;
+	}
+}

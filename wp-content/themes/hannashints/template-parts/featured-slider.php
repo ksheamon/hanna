@@ -8,7 +8,7 @@ $args = array(
 $featured = new WP_Query($args);
 
 if ($featured->have_posts()): ?>
-	<div class="img-slider">
+	<div class="img-slider" data-slick='{"centerMode": true,"initialSlide": 1,"infinite": true,"variableWidth": true,"centerPadding": "35px"}'>
 		<?php while($featured->have_posts()): $featured->the_post(); 
 
 			$post_url = get_the_post_thumbnail_url($post->ID);

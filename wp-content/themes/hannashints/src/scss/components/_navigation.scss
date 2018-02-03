@@ -8,5 +8,9 @@
 		padding: 25px;
 		float: none;
 		display: inline-block;
+
+		&.current-menu-item {
+			color: $color-accent;
+		}
 	}
 }

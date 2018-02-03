@@ -5,7 +5,7 @@
 body {
 	font-family: $font-sans;
 	line-height: $base-line-height;
-	font-weight: 300;
+	font-weight: 200;
 }
 
 .aligncenter {
@@ -82,5 +82,23 @@ body {
 
 	.site-description {
 		font-size: 12px;
+	}
+}
+
+//Buttons
+.btn {
+	display: inline-block;
+	clear: both;
+	margin: auto;
+	padding: 18px;
+	text-transform: uppercase;
+	border: 1px solid $color-btn;
+	transition: all 0.3s;
+
+	&:hover {
+		text-decoration: none;
+		border-color: $color-btn-hover;
+		background: $color-btn-hover;
+		color: #fff;
 	}
 }

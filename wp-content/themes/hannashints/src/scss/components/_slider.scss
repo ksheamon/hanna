@@ -1,15 +1,21 @@
+@import "../lib/slick.scss";
+
 .img-slider {
-	.slide {
-		width: 635px;
+	overflow: hidden;
+
+	.slide,
+	.slick-slide {
+		width: 635px !important;
 		height: 460px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
-		display: flex;
+		display: inline-flex !important;
 		align-items: center;
 		justify-content: center;
 		position: relative;
-
+		margin: 0 17px;
+		
 		&:before {
 			content: "";
 			display: block;
@@ -23,6 +29,9 @@
 
 		> .content-box {
 			width: 77%;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s;
 
 			> .content-box {
 				padding: 40px;
@@ -36,41 +45,54 @@
 
 			&-inner {
 				.content-tags {
-					list-style: none;
-					margin: 0;
-					padding: 0;
-
 					li {
-						display: inline-block;
 						color: $color-accent;
 						font-size: 14px;
-						font-weight: 200;
-
-						&:not(:last-child) {
-							&:after {
-								content: ", ";
-								display: inline-block;
-							}
-						}
 					}
 				}
 
 				.content-title {
-					color: $color-heading;
-					font-family: $font-serif;
 					font-size: 36px;
-					margin: 1rem 0;
-
-					a:hover {
-						text-decoration: none;
-					}
 				}
 
 				.content-date {
+					color: $color-text;
 					font-size: 14px;
-					text-transform: uppercase;
 				}
 			}
 		}
+	}
+
+	.slick-slide {
+		opacity: 0.65;
+
+		&.slick-current.slick-active {
+			opacity: 1;
+
+			.slide > .content-box {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.slick-next,
+	.slick-prev {
+		@include inline-svg-icon("arrow-r", white, center, 65px);
+		right: 0;
+		z-index: 1;
+		height: 65px;
+		width: 65px;
+
+		&:before,
+		&:after {
+			content: "";
+		}
+	}
+
+	.slick-prev {
+		transform: rotate(-180deg);
+		left: 0;
+		right: auto;
 	}
 }
