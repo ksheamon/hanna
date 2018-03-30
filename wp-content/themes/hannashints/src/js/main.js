@@ -4,7 +4,9 @@ window.$ = $;
 import is from './utils/is.js';
 
 
+import { Comp as Header } from './components/header.js';
 import { Comp as Slider } from './components/slider.js';
+import { Comp as Sidebar } from './components/sidebar.js';
 
 // ------------------------------------------------
 // Functions
@@ -27,18 +29,22 @@ const initBase = () => {
     is.mobile() && body.classList.add('is-mobile-type');
     is.touch() && body.classList.add('is-touch');
 
-    formEl.each((i, val) => new Form(val));
+    
 };
 
 /**
  * Initializes components
  */
 const initComponents = () => {
+    const headerEl = $('header');
     const dropdownEl = $('.dropdown__custom');
-    const sliderEl = $('.img-slider');
+    const sliderEl = $('.img-slider, .gallery');
+    const sidebarEl = $('#secondary');
 
     //dropdownEl.each((i, val) => new Dropdown(val, { targetClose: dropdownEl }));
+    headerEl.each((i, val) => new Header(val));
     sliderEl.each((i, val) => new Slider(val));
+    sidebarEl.each((i, val) => new Sidebar(val));
 };
 
 /**

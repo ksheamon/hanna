@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     sassInlineSvg = require('gulp-sass-inline-svg'),
-    svgmin = require('gulp-svgmin');
+    svgmin = require('gulp-svgmin'),
+    imagemin = require('gulp-imagemin');
 
 gulp.task('sass:svg', function(){
     return gulp.src('src/svgs/**/*.svg') 
@@ -16,6 +17,12 @@ gulp.task('sass:svg', function(){
         destDir: 'src/scss/base'
       }));
 });
+
+gulp.task('images', () =>
+    gulp.src('src/imgs/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/imgs'))
+);
 
 gulp.task('styles', function(){
   return gulp.src('src/scss/app.scss')

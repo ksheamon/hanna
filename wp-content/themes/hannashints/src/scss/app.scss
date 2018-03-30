@@ -4,14 +4,15 @@
 @import "layout/breakpoint";
 
 @import "base/wpbase";
+@import "base/sass-inline-svg";
 @import "base/typography";
-@import "base/icons";
 
 @import "components/content";
 @import "components/navigation";
+@import "components/header";
 @import "components/slider";
-@import "components/pagination";
 @import "components/article";
+@import "components/pagination";
 
 @import "view/main";
 @import "view/home";

@@ -26,27 +26,38 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation aligncenter">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hannashints' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
+			<div id="toggle" class="is-mobile">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="popout">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+			</div>
 		</nav><!-- #site-navigation -->
 
 		<div class="site-branding">
 			<?php
 			$description = get_bloginfo( 'description', 'display' );			
 			if ( is_front_page() && is_home() ) : ?>
-				<h1 id="logo-type" class="aligncenter">
+				<h1 class="aligncenter logo-type">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<span class="site-title"><?php bloginfo( 'name' ); ?></span>
 						<span class="site-description"><?php echo $description; ?></span>
 					</a>
 				</h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<div class="aligncenter logo-type">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<span class="site-title"><?php bloginfo( 'name' ); ?></span>
+						<span class="site-description"><?php echo $description; ?></span>
+					</a>
+				</div>
 			<?php
 			endif;?>
 		</div><!-- .site-branding -->
@@ -57,5 +68,3 @@
 		get_template_part('template-parts/featured-slider', 'none');
 		
 	} ?>
-	<div class="wrapper">
-		<div id="content" class="site-content">

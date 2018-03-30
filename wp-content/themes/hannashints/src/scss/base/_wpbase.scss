@@ -267,8 +267,11 @@ textarea {
 	color: #404040;
 	font-family: sans-serif;
 	font-size: 16px;
-	font-size: 1rem;
 	line-height: 1.5;
+
+	@include breakpoint(small) {
+		font-size: 14px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -351,6 +354,11 @@ hr {
 
 ul, ol {
 	margin: 0 0 1.5em 3em;
+
+	@include breakpoint(small) {
+		margin: 0 0 15px 15px;
+		padding-left: 15px;
+	}
 }
 
 ul {
@@ -365,6 +373,10 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+
+	@include breakpoint(small) {
+		margin-left: 15px;
+	}
 }
 
 dt {

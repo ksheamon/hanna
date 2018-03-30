@@ -13,11 +13,13 @@ class Comp extends Component {
 	    this._$el = $el;
 	    this._$els = {};
 
+	    this._$els.slides = this._$el.find('.slides');
+
 	    this._initSlider();
 	}
 
 	_initSlider() {
-		this._$el.slick();
+		this._$els.slides.slick();
 	}
 }
 

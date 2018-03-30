@@ -7,21 +7,15 @@ h5 {
 	margin: 0;
 }
 
-h1 {}
-
-h2 {}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
 p {
 	font-family: $base-font;
 	font-size: $base-font-size;
 	color: $color-text;
 	margin-bottom: 0;
+
+	@include breakpoint(small) {
+		font-size: 14px;
+	}
 }
 
 
@@ -40,3 +34,32 @@ a {
 		color: inherit;
 	}
 } 
+
+blockquote {
+	margin-left: 105px;
+	line-height: 1.5;
+	font-style: italic;
+
+	@include breakpoint(small) {
+		margin-left: 45px;
+	}
+
+	&:before {
+		content: "";
+		display: inline-block;
+		@include inline-svg-icon("quotes", $_coral, center, 65px);
+
+		height: 65px;
+		width: 65px;
+		float: left;
+		margin-left: -75px;
+		margin-top: -15px;
+
+		@include breakpoint(small) {
+			position: absolute;
+			left: 15px;
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+}

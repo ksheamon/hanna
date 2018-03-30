@@ -5,7 +5,7 @@
   "repository": "https://github.com/ksheamon/hanna.git",
   "main": "index.js",
   "scripts": {
-    "build": "gulp sass:svg && gulp styles && webpack"
+    "build": "gulp sass:svg && gulp images && gulp styles && webpack"
   },
   "author": "Kimberly Sheamon",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "gulp-clean-css": "^3.9.2",
     "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",

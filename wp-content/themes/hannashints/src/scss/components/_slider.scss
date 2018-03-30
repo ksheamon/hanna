@@ -1,7 +1,12 @@
 @import "../lib/slick.scss";
 
+//Featured Images -- Home page
 .img-slider {
 	overflow: hidden;
+
+	.slick-track{
+	    display: flex;
+	}
 
 	.slide,
 	.slick-slide {
@@ -15,7 +20,15 @@
 		justify-content: center;
 		position: relative;
 		margin: 0 17px;
-		
+
+		@include breakpoint(small) {
+			width: 100vw !important;
+			height: auto;
+			display: flex;
+	        align-items: center; //optional
+	        justify-content: center; //optional
+		}
+
 		&:before {
 			content: "";
 			display: block;
@@ -32,9 +45,14 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: all 0.3s;
+			z-index: 5;
 
 			> .content-box {
 				padding: 40px;
+
+				@include breakpoint(small) {
+					padding: 30px 15px;
+				}
 			}
 		}
 
@@ -63,6 +81,12 @@
 		}
 	}
 
+	.slide {
+		@include breakpoint(small) {
+			padding: 30px 0;
+		}
+	}
+
 	.slick-slide {
 		opacity: 0.65;
 
@@ -84,6 +108,16 @@
 		height: 65px;
 		width: 65px;
 
+		@include breakpoint(large) {
+			height: 40px;
+			width: 40px;
+			background-size: 40px;
+		}
+
+		@include breakpoint(tiny) {
+			display: none !important;
+		}
+
 		&:before,
 		&:after {
 			content: "";
@@ -94,5 +128,94 @@
 		transform: rotate(-180deg);
 		left: 0;
 		right: auto;
+		top: calc(50% - 33px);
+
+		@include breakpoint(small) {
+			top: calc(50% - 20px);
+		}
+	}
+
+	.slick-dots {
+		display: none;
+
+		@include breakpoint(small) {
+			display: block;
+		}
+
+		li {
+			height: auto;
+			width: auto;
+
+			button {
+				background: $color-dots;
+				height: 10px;
+				width: 10px;
+				border-radius: 100%;
+
+				&:before {
+					display: none;
+				}
+			}
+
+			&.slick-active button {
+				background-color: $color-dots-active;
+			}
+		}
+	}
+}
+
+//Post Galleries
+.gallery {
+	.slick-next,
+	.slick-prev {
+		@include inline-svg-icon("arrow-r", white, center, 35px);
+		z-index: 1;
+		height: 35px;
+		width: 35px;
+
+		&:before,
+		&:after {
+			content: "";
+		}
+	}
+
+	.slick-next {
+		right: 0px;
+		z-index: 2;
+	}
+
+	.slick-prev {
+		transform: rotate(-180deg);
+		left: 0px;
+		z-index: 2;
+		top: calc(50% - 17px);
+	}
+
+	.gallery-nav {
+		margin-top: -110px;
+
+		@include breakpoint(small) {
+			display: none;
+		}
+
+		.slick-track {
+			margin: 0;
+		}
+
+		.slick-slide {
+			width: 135px !important;
+			border: 3px solid $color-thumbnail;
+			cursor: pointer;
+			margin: 5px;
+
+			img {
+				display: block !important;
+			}
+
+			&.slick-active.slick-current,
+			&:hover {
+				border-color: $color-thumbnail-active;
+			}
+		}
 	}
 }

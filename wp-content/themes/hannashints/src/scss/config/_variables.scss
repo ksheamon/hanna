@@ -21,7 +21,7 @@ $_mdgrey: #9f9f9f;
 $_ltgrey: #ececec;
 $_coral: #fe6f67;
 
-$breakpoint-tiny: 320px;
+$breakpoint-tiny: 480px;
 $breakpoint-small: 767px;
 $breakpoint-medium: 959px;
 $breakpoint-large: 1240px;
@@ -38,9 +38,26 @@ $color-accent: $_coral;
 $color-footer: $_ltgrey;
 $color-hr: $_mdgrey;
 
+$color-head-bg: $_coral;
+
 $color-tags: $_mdgrey;
 
 $color-btn: $_mdgrey;
 $color-btn-hover: $_coral;
 
 $color-pagination: $_dkgrey;
+
+$color-side-title: #595959;
+$color-side-date: $_mdgrey;
+
+$color-thumbnail: #434343;
+$color-thumbnail-active: $_coral;
+
+$color-postnav-top: $_mdgrey;
+$color-postnav-top-hover: $_coral;
+$color-postnav-border: #ccc;
+
+$color-mobile-trigger: $_mdgrey;
+
+$color-dots: $_mdgrey;
+$color-dots-active: $_coral;

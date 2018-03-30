@@ -22,6 +22,7 @@
 				<p class="site-description"><?php echo $description; ?></p>
 			</div><!-- .footer-left -->
 			<div class="footer-right">
+				<a href="https://www.ksheamon.io" target="_blank">Designed &amp; developed by Kimberly Sheamon</a>
 				&copy; <?php echo date('Y');?>
 			</div><!-- .footer-right -->
 		</div>

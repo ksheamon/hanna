@@ -1,5 +1,9 @@
 body.home {
 	.img-slider {
-		margin: 60px 0;
+		margin-bottom: 60px;
+
+		@include breakpoint(small) {
+			margin-bottom: 30px;
+		}
 	}
 }

@@ -119,9 +119,9 @@ add_action( 'widgets_init', 'hannashints_widgets_init' );
 function hannashints_scripts() {
 	wp_enqueue_style( 'hannashints-style', get_template_directory_uri() . '/dist/main.css' );
 
-	wp_enqueue_script( 'hannashints-navigation', get_template_directory_uri() . '/dist/main.js', array(), '20180128', true );
+	wp_enqueue_script( 'hannashints-main', get_template_directory_uri() . '/dist/main.js', array(), '20180128', true );
 
-	//wp_enqueue_script( 'hannashints-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'hannashints-navigation', get_template_directory_uri() . '/src/js/lib/navigation.js', array(), '20151215', true );
 
 	//wp_enqueue_script( 'hannashints-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -245,3 +245,26 @@ function hannashints_get_all_imgs($post_id) {
 	
 	return $postImgs;	
 }
+
+//* Insert SPAN tag into widgettitle
+add_filter( 'dynamic_sidebar_params', 'hannashints_wrap_widget_titles', 20 );
+function hannashints_wrap_widget_titles( array $params ) {
+        
+        // $params will ordinarily be an array of 2 elements, we're only interested in the first element
+        $widget =& $params[0];
+        $widget['before_title'] = '<h4 class="widgettitle"><span class="heading-line"></span><span class="heading-title">';
+        $widget['after_title'] = '</span><span class="heading-line"></span><span class="is-tablet is-mobile heading--trigger"></span></h4>';
+        
+        return $params;
+        
+}
+
+function hannashints_wrap_archive_title( $title ) {
+	$title_parts = explode( ': ', $title, 2 );
+
+	if ( ! empty( $title_parts[1] ) ) {
+	    $title = '<span class="header-label">' . esc_html( $title_parts[0] ) . ': </span><span class="header-text">' . $title_parts[1] .'</span>';
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'hannashints_wrap_archive_title' );
