@@ -5,14 +5,14 @@
 	@include breakpoint(small) {
 		margin-bottom: 0;
 		height: 50px;
-		position: absolute;
+		position: relative;
     	top: 0;
 	}
 }
 
 .site-branding {
 	@include breakpoint(small) {
-		padding-top: 30px;
+		padding-top: 75px;
 	}
 }
 

@@ -3,15 +3,17 @@
 }
 
 html {
-	@include breakpoint(large) {
-		margin-top: 0 !important;
-	}
+	margin-top: 0 !important;
 }
 
 body {
 	font-family: $font-sans;
 	line-height: $base-line-height;
 	font-weight: 200;
+
+	&.logged-in {
+		margin-top: 46px;
+	}
 }
 
 .aligncenter {
