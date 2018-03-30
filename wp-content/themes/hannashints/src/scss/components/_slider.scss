@@ -136,10 +136,10 @@
 	}
 
 	.slick-dots {
-		display: none;
+		display: none !important;
 
 		@include breakpoint(small) {
-			display: block;
+			display: block !important;
 		}
 
 		li {

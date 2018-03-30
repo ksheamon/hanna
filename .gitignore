@@ -1,1 +1,2 @@
-wp-content/themes/hannnashints/node_modules
+wp-content/themes/hannnashints/node_modules/*
+wp-config.php
