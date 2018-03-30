@@ -117,6 +117,8 @@ add_action( 'widgets_init', 'hannashints_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hannashints_scripts() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+	
 	wp_enqueue_style( 'hannashints-style', get_template_directory_uri() . '/dist/main.css' );
 
 	wp_enqueue_script( 'hannashints-main', get_template_directory_uri() . '/dist/main.js', array(), '20180128', true );
