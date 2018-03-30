@@ -4,6 +4,9 @@
 
 	@include breakpoint(small) {
 		margin-bottom: 0;
+		height: 50px;
+		position: absolute;
+    	top: 0;
 	}
 }
 
