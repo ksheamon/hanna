@@ -12,7 +12,16 @@
  * @package hannashints
  */
 
-get_header(); ?>
+get_header(); 
+while ( have_posts() ) : the_post();
+?>
+<header class="page-header">
+	<?php
+		the_title( '<h1 class="page-title">', '</h1>' );
+	?>
+</header><!-- .page-header -->
+<?php endwhile; ?>
+
 <div class="wrapper">
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">

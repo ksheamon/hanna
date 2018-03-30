@@ -3,7 +3,7 @@
 Plugin Name: Recent Posts Widget With Thumbnails
 Plugin URI:  http://wordpress.org/plugins/recent-posts-widget-with-thumbnails/
 Description: Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings
-Version:     6.0
+Version:     6.1
 Author:      Martin Stehle
 Author URI:  http://stehle-internet.de
 Text Domain: recent-posts-widget-with-thumbnails
@@ -69,7 +69,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 		$this->defaults[ 'excerpt_more' ]		= apply_filters( 'rpwwt_excerpt_more', ' ' . '[&hellip;]' ); // set ellipses as default 'more'
 		$this->defaults[ 'number_posts' ]		= 5; // number of posts to show in the widget
 		$this->defaults[ 'plugin_slug' ]		= 'recent-posts-widget-with-thumbnails'; // identifier of this plugin for WP
-		$this->defaults[ 'plugin_version' ]		= '6.0'; // number of current plugin version
+		$this->defaults[ 'plugin_version' ]		= '6.1'; // number of current plugin version
 		$this->defaults[ 'post_title_length' ] 	= 1000; // default length: 1000 characters
 		$this->defaults[ 'site_protocol' ]		= ( is_ssl() ) ? 'https' : 'http'; // HTTP type of WP site
 		$this->defaults[ 'site_url' ]			= home_url(); // URL of the current site
@@ -78,7 +78,9 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 		$this->defaults[ 'thumb_url' ]			= plugins_url( 'default_thumb.gif', __FILE__ ); // URL of the default thumbnail
 		$this->defaults[ 'thumb_width' ]		= absint( round( get_option( 'thumbnail_size_w', 110 ) / 2 ) ); // custom width of the thumbnail
 		$this->defaults[ 'widget_title' ]		= ''; // title of the widget
-		$this->ints 							= array( 'excerpt_length', 'number_posts', 'post_title_length', 'thumb_height', 'thumb_width' );		$this->valid_excerpt_sources			= array( 'post_content', 'excerpt_field' );		$widget_ops 							= array( 'classname' => $this->defaults[ 'plugin_slug' ], 'description' => $widget_desc );
+		$this->ints 							= array( 'excerpt_length', 'number_posts', 'post_title_length', 'thumb_height', 'thumb_width' );
+		$this->valid_excerpt_sources			= array( 'post_content', 'excerpt_field' );
+		$widget_ops 							= array( 'classname' => $this->defaults[ 'plugin_slug' ], 'description' => $widget_desc );
 		parent::__construct( $this->defaults[ 'plugin_slug' ], $widget_name, $widget_ops );
 
 		add_action( 'admin_init',				array( $this, 'load_plugin_textdomain' ) );
@@ -840,7 +842,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 
 		// get excerpt from text field if desired
 		if ( ! $this->customs[ 'ignore_excerpt' ] ) {
-			$excerpt = $post->post_excerpt;
+			$excerpt = apply_filters( 'rpwwt_the_excerpt', $post->post_excerpt, $post );
 		}
 		
 		// text processings if no manual excerpt is available

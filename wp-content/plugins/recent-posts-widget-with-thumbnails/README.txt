@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: arabic, aspect ratio, author, category, categories, category, current post, excerpt, extended, featured, featured images, first post image, height, image, images, listed posts, post date, post categories, post category, post title, random, recent posts, sticky, thumb, thumbnail, thumbnails, thumbs, widget, widgets, width, persian, farsi, russian, turkish, japanese
 Requires at least: 2.9
 Requires PHP: 5.2
-Tested up to: 4.9.2
-Stable tag: 6.0
+Tested up to: 4.9.4
+Stable tag: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,13 +28,16 @@ You can set the width and heigth of the thumbnails in the list. The thumbnails a
 * **"Easier than making an egg, seriously."** in the [reviews](https://wordpress.org/support/topic/easier-than-making-an-egg-seriously/) by djackofall on October 2, 2017
 * **"This plugin is INCREDIBLE"** in the [reviews](https://wordpress.org/support/topic/do-you-also-have-one-for-most-popular-posts/) by lucio7 on August 25, 2017
 * **Number 16** in [20 WordPress Plugins Every Blogger Needs to Increase Engagement](http://nocturnalthrive.com/2017/08/09/20-free-wordpress-plugins-every-blogger-needs/) by Nocturnal Thrive on August 9, 2017
+* **listed** in [10 Best WordPress Thumbnail Plugins to Manage Images Perfectly](https://www.sourcewp.com/wordpress-thumbnail-plugins/) by Dhiraj Das on July 14, 2017
+* **Widgets Users Will Love** in [10 Ultra-Useful Free WordPress Widget Plugins](https://speckyboy.com/free-wordpress-widget-plugins/) by Eric Karkovack on June 16, 2017
+* **Number 6** in [Best WordPress Plugins to Regenerate Thumbnail Images](https://wpdean.com/best-wordpress-plugins-to-regenerate-thumbnail-images/) by WPDean on May 5, 2017
+* **listed** in [20 WordPress Plugins that Steals Attention to Engage Visitors of Your Site](https://wpteamsupport.com/wordpress-plugins-engage-visitors/) by WP Team Support on March 6, 2017
+* **listed** in [Most useful  WordPress widget ready plugins](https://themeidol.com/most-useful-wordpress-widget-ready-plugins/) by Themeidol on February 5, 2017
+* **Number 1** in [8 essential WordPress widgets to supercharge your website](https://www.nimbusthemes.com/8-essential-wordpress-widgets-to-supercharge-your-website/) by Rafay Ansari on January 31, 2017
+* **Number 6** in [10 fantastic free WordPress plugins for 2017](https://torquemag.io/2017/01/free-wordpress-plugins-2017/) by John Hughes on January 23, 2017
 * **"Excellent (after trying a few)!"** in the [reviews](https://wordpress.org/support/topic/excellent-after-trying-a-few/) by giorgissimo on January 6, 2017
-* **"&hellip;definitely the best Recent Posts plugin I've found&hellip;"** in the [support forum](https://wordpress.org/support/topic/google-chrome-blurry-thumbnail-85x85) by devintshawn on April 9, 2016
-* **Number 5** in [12 Useful WordPress Sidebar Widgets to Engage Visitors](https://85ideas.com/plugins/best-widgets-wordpress/) by Pawan Kumar on December 8, 2015
-* **Number 1** in [Los 10 widgets de WordPress más prácticos](http://wpdirecto.com/los-10-widgets-de-wordpress-mas-practicos-1860/) by Jorge López on November 13, 2015
-* [How to show recent posts in WordPress blog](http://mayifix.com/how-to-show-recent-posts-in-wordpress-blog.html) by Robin on June 28, 2015
-* **Number 5** in [Best List of Free Recent Posts Widgets for WordPress](http://dotcave.com/wordpress/free-recent-posts-widgets-for-wordpress/) by jerry on November 29, 2014
-* **Number 1** in [25 Most Useful WordPress Widgets for Your Site](http://www.wpbeginner.com/showcase/25-most-useful-wordpress-widgets-for-your-site/) by Editorial Staff on September 18, 2014
+* **Number 3** in [4 Best Sticky Widget Plugins for WordPress Websites](https://www.bloggerhit.com/sticky-widget-plugins-for-wordpress-websites/) by Purushottam Kadam on November 4, 2016
+* **Number 6** in [Top 10 Best Recent Posts Plugins For WordPress](https://www.wpchandra.com/top-10-best-recent-posts-plugins-wordpress.html) by Editorial Staff on July 20, 2016
 
 = Options you can set =
 
@@ -78,9 +81,11 @@ The plugin considers the output of actions hooked on:
 
 1. widget_title
 2. rpwwt_widget_posts_args
-3. rpwwt_excerpt_more
-4. rpwwt_excerpt_length
-5. rpwwt_list_cats
+3. rpwwt_the_excerpt (for manual excerpts only)
+4. the_excerpt (for all excerpts, is also applied after 'rpwwt_the_excerpt')
+5. rpwwt_excerpt_more
+6. rpwwt_excerpt_length
+7. rpwwt_list_cats
 
 = Useful hints for developers: Available CSS Selectors =
 
@@ -209,6 +214,11 @@ If you want to contribute a translation of the plugin in your language it would 
 2. The second screenshot shows the widget on the Widget Management Page in the backend.
 
 == Changelog ==
+
+= 6.1 =
+* Added new filter hook 'rpwwt_the_excerpt' for manual excerpts
+* Removed sanitation of the widget title to allow HTML code as output
+* Tested successfully with WordPress 4.9.4
 
 = 6.0 =
 * Added option for custom category label
@@ -454,6 +464,9 @@ Successfully tested with WordPress 4.0
 * The plugin was released.
 
 == Upgrade Notice ==
+
+= 6.1 =
+Added filter hook 'rpwwt_the_excerpt', removed widget title sanitation, tested with WordPress 4.9.4
 
 = 6.0 =
 Added custom category label, refactored, updated translations, updated screenshot

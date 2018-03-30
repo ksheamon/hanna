@@ -360,3 +360,10 @@ hr,
 		color: #fff;
 	}
 }
+
+span.wpcf7-not-valid-tip {
+	color: $color-error;
+	font-weight: 200;
+	font-style: italic;
+	font-size: 14px;
+}

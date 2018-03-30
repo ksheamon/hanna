@@ -1,6 +1,6 @@
 <?php echo $args[ 'before_widget' ]; ?>
 <div id="rpwwt-<?php echo $args[ 'widget_id' ];?>" class="rpwwt-widget">
-	<?php if ( $title ) echo $args[ 'before_title' ] . esc_html( $title ) . $args[ 'after_title' ]; ?>
+	<?php if ( $title ) echo $args[ 'before_title' ] . $title . $args[ 'after_title' ]; ?>
 	<ul>
 	<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 		<li<?php 
