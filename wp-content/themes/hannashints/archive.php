@@ -36,14 +36,16 @@ if ( have_posts() ) : ?>
 
 				endwhile;
 
-				the_posts_navigation();
-
 			else :
 
 				get_template_part( 'template-parts/content', 'none' );
 
-			endif; ?>
-
+			endif; 
+				the_posts_pagination(array(
+					'prev_text' => __( '<<', 'textdomain' ),
+	    			'next_text' => __( '>>', 'textdomain' ),
+				));
+			?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php get_sidebar(); ?>

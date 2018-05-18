@@ -34,6 +34,53 @@ article {
 			margin: 35px 0;
 		}
 	}
+
+	.article--b {
+		display: flex;
+
+		.article-img {
+			width: 270px;
+		}
+
+		.article-content {
+			margin-top: 0;
+			padding: 0 20px;
+			width: calc(100% - 270px);
+
+			a {
+				text-decoration: none;
+			}
+
+			.content-title {
+				font-size: 30px;
+				margin: 0;
+			}
+
+			.content-date {
+				font-size: 14px;
+			}
+
+			.entry-summary {
+				margin-top: 0;
+
+				&,
+				> p {
+					margin-top: 0;
+					font-size: 14px;
+					line-height: 25px;
+
+					&:first-child {
+						margin-top: 7px;
+					}
+				}
+
+				a {
+					margin-top: 10px;
+					display: block;
+				}
+			}
+		}
+	}
 }
 
 #post-nav {

@@ -11261,8 +11261,12 @@ var Comp = function (_Component) {
 
 		_this._$els.mToggle = $el.find('#toggle');
 		_this._$els.popout = $el.find('.popout');
+		_this._$els.searchBlock = $el.find('.block--search');
+		_this._$els.searchToggle = $el.find('.search--toggle');
+		_this._$els.search = _this._$els.searchBlock.find('input[type="search"]');
 
 		_this._$els.mToggle.on('click', _this._onClick.bind(_this));
+		_this._$els.searchToggle.on('click', _this._onSearch.bind(_this));
 		return _this;
 	}
 
@@ -11271,6 +11275,15 @@ var Comp = function (_Component) {
 		value: function _onClick() {
 			this._$els.mToggle.toggleClass('is-open');
 			this._$els.popout.toggleClass('is-open');
+		}
+	}, {
+		key: '_onSearch',
+		value: function _onSearch() {
+			this._$els.searchBlock.toggleClass('is-open');
+
+			if ($(this._$els.searchBlock).hasClass('is-open')) {
+				this._$els.search.focus();
+			}
 		}
 	}]);
 

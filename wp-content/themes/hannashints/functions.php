@@ -270,3 +270,21 @@ function hannashints_wrap_archive_title( $title ) {
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'hannashints_wrap_archive_title' );
+
+
+function hh_excerpt($limit) {
+      $excerpt = explode(' ', get_the_excerpt(), $limit);
+
+      if (count($excerpt) >= $limit) {
+          array_pop($excerpt);
+          $excerpt = implode(" ", $excerpt) . '...';
+      } else {
+          $excerpt = implode(" ", $excerpt);
+      }
+
+      $excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
+
+      $excerpt .= '<a class="readmore" href="'. get_permalink($post->ID) . '">Continue Reading > </a>';
+
+      return $excerpt;
+}
