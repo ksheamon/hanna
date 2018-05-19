@@ -1,8 +1,25 @@
 body.error404 {
+	#page {
+		@include breakpoint(small) {
+			min-height: calc(100vh - 92px);
+			position: relative;
+			overflow: hidden;
+		}
+	}
+
 	#primary {
 		width: 100%;
 		max-width: 100%;
 		padding: 0;
+
+		@include breakpoint(small) {
+			height: calc(100% - 181px);
+			display: block;
+
+			#main {
+				height: 100%;
+			}
+		}
 	}
 
 	.page-content {
@@ -20,12 +37,13 @@ body.error404 {
 
 		@include breakpoint(large) {
 			padding-top: 85px;
-			height: 514px;
+			min-height: 537px;
+			height: 100%;
 		}
 
 		@include breakpoint(small) {
 			padding-top: 55px;
-			height: 400px;
+			min-height: 400px;
 		}
 	}
 
