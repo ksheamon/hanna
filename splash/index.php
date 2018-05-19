@@ -16,7 +16,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 	<title>Hanna&#039;s Hints</title>
 	<meta name='robots' content='noindex,follow' />
-	<link rel='stylesheet' href='../wp-content/themes/hannashints/dist/main.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='../hannashints/wp-content/themes/hannashints/dist/main.css' type='text/css' media='all' />
 	<link rel='stylesheet' href='./assets/main.css' type='text/css' media='all' />
 </head>
 <body>
