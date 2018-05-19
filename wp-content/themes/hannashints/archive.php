@@ -37,9 +37,7 @@ if ( have_posts() ) : ?>
 				endwhile;
 
 			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
+				//get_template_part( 'template-parts/content', 'none' );
 			endif; 
 				the_posts_pagination(array(
 					'prev_text' => __( '<<', 'textdomain' ),

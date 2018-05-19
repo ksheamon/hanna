@@ -16,6 +16,14 @@ body {
 	}
 
 	&.search {
+		.page-content {
+			margin: 0 auto;
+
+			> p:first-child {
+				margin-top: 0;
+			}
+		}
+
 		.page-header {
 			strong {
 				font-weight: 400;
@@ -135,13 +143,15 @@ hr,
 	.widget {
 		@include breakpoint(large) {
 			&:not(.widget_wordpresscanvas_about_me) {
-				max-height: 30px;
-				overflow: hidden;
+				&:not(.widget_search) {
+					max-height: 30px;
+					overflow: hidden;
 
-				> div {
-					height: 30px;	
-				}
-			}			
+					> div {
+						height: 30px;	
+					}
+				}	
+			}		
 		}
 
 		.widgettitle {
@@ -205,6 +215,42 @@ hr,
 
 			.widgettitle .heading--trigger {
 				transform: rotate(-180deg);
+			}
+		}
+
+		&.recent-posts-widget-with-thumbnails {
+			margin-top: 40px;
+		}
+
+		&.widget_search {
+			position: relative;
+
+			@include breakpoint(large) {
+				margin-top: 30px;
+				max-height: none;
+			}
+
+			[type="search"] {
+				width: 100%;
+				border-width: 1px;
+				border-radius: 0;
+				background: #fff;
+				padding: 7px 0 7px 10px;
+				line-height: 24px;
+			}
+
+			[type="submit"] {
+				@include inline-svg-icon("arrow-r", white, center, 18px);
+
+				position: absolute;
+				font-size: 0;
+				height: 40px;
+				width: 40px;
+				right: 0px;
+				bottom: 0px;
+				border-radius: 0;
+				border: none;
+				background-color: $color-search-bg;
 			}
 		}
 

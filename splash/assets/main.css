@@ -1,0 +1,145 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, _splash.scss */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  color: #3f3f3f;
+}
+/* line 6, _splash.scss */
+body .splash {
+  display: block;
+  height: 100vh;
+  background-image: url(./imgs/splash.jpg);
+  background-color: #f2eaec;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 1277px;
+  max-width: 1920px;
+  margin: auto;
+}
+@media screen and (max-width: 1400px) {
+  /* line 6, _splash.scss */
+  body .splash {
+    max-width: 100%;
+    min-height: 934px;
+    background-size: 100%;
+  }
+}
+@media screen and (max-width: 1240px) {
+  /* line 6, _splash.scss */
+  body .splash {
+    min-height: 684px;
+  }
+}
+/* line 27, _splash.scss */
+body .splash .wrapper {
+  max-width: 1400px;
+}
+@media screen and (max-width: 1400px) {
+  /* line 27, _splash.scss */
+  body .splash .wrapper {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  /* line 27, _splash.scss */
+  body .splash .wrapper {
+    max-width: 767px;
+  }
+}
+/* line 39, _splash.scss */
+body .splash .heading {
+  position: absolute;
+  top: 50%;
+  padding-left: 12%;
+}
+@media screen and (max-width: 1400px) {
+  /* line 39, _splash.scss */
+  body .splash .heading {
+    top: 60%;
+  }
+}
+/* line 49, _splash.scss */
+body .splash .heading > div:first-child, body .splash .heading > div:last-child {
+  font-size: 32px;
+}
+/* line 54, _splash.scss */
+body .splash .heading > div.gv {
+  font-family: "Great Vibes", cursive;
+  font-size: 125px;
+  color: #fe6f67;
+  margin: 20px auto 0;
+}
+/* line 61, _splash.scss */
+body .splash .heading > div:last-child {
+  text-align: right;
+  margin-right: -80px;
+}

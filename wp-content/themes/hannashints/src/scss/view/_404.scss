@@ -2,6 +2,11 @@ body.error404 {
 	#primary {
 		width: 100%;
 		max-width: 100%;
+		padding: 0;
+	}
+
+	.page-content {
+		margin: 0;
 	}
 
 	.error-404 {
@@ -12,12 +17,30 @@ body.error404 {
 		background-size: cover;
 		padding-top: 135px;
 		text-align: center;
+
+		@include breakpoint(large) {
+			padding-top: 85px;
+			height: 514px;
+		}
+
+		@include breakpoint(small) {
+			padding-top: 55px;
+			height: 400px;
+		}
 	}
 
 	.page-content {
 		.page-title {
 			font-size: 70px;
 			font-weight: 200;
+
+			@include breakpoint(large) {
+				font-size: 40px;
+			}
+
+			@include breakpoint(small) {
+				font-size: 35px;
+			}
 
 			strong {
 				font-weight: 400;
@@ -30,10 +53,21 @@ body.error404 {
 
 		p {
 			font-size: 28px;
-			line-height: 48px;
+			line-height: 1.7;
 			max-width: 676px;
 			margin: 25px auto auto;
 			font-weight: 300;
+
+			@include breakpoint(large) {
+				font-size: 20px;
+				max-width: 476px;
+			}
+
+			@include breakpoint(small) {
+				font-size: 16px;
+				margin-top: 15px;
+				padding: 0 15px;
+			}
 		}
 
 		.block--search {
@@ -41,6 +75,15 @@ body.error404 {
 			width: 100%;
 			max-width: 676px;
 			margin: 50px auto auto;
+
+			@include breakpoint(large) {
+				max-width: 476px;
+			}
+
+			@include breakpoint(small) {
+				width: calc(100% - 30px);
+				margin-top: 30px;
+			}
 
 			form {
 				width: 100%;

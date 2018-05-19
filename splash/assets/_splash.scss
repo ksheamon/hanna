@@ -1,0 +1,68 @@
+body {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 200;
+	color: #3f3f3f;
+
+	.splash {
+		display: block;
+		height: 100vh;
+		background-image: url(./imgs/splash.jpg);
+		background-color: #f2eaec;
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 1277px;
+		max-width: 1920px;
+		margin: auto;
+
+		@media screen and (max-width: 1400px) {
+			max-width: 100%;
+			min-height: 934px;
+			background-size: 100%;
+		}
+
+		@media screen and (max-width: 1240px) {
+			min-height: 684px;
+		}
+
+		.wrapper {
+			max-width: 1400px;
+
+			@media screen and (max-width: 1400px) {
+				max-width: 1024px;				
+			}
+
+			@media screen and (max-width: 1240px) {
+				max-width: 767px;
+			}
+		}
+
+		.heading {
+			position: absolute;
+			top: 50%;
+			padding-left: 12%;
+
+			@media screen and (max-width: 1400px) {
+				top: 60%;
+			}
+
+			> div {
+				&:first-child,
+				&:last-child {
+					font-size: 32px;
+				}
+
+				&.gv {
+					font-family: "Great Vibes", cursive;
+					font-size: 125px;
+					color: #fe6f67;
+					margin: 20px auto 0;
+				}
+
+				&:last-child {
+					text-align: right;
+					margin-right: -80px;
+				}
+			}
+		}
+	}
+}

@@ -4,6 +4,7 @@ $breakpoints: (
     "small":  "screen and (max-width: $breakpoint-small)",
     "medium": "screen and (max-width: $breakpoint-medium)",
     "large":  "screen and (max-width: $breakpoint-large)",
+    "xl":  "screen and (max-width: $breakpoint-xl)",
     "huge":   "screen and (max-width: $breakpoint-huge)"
 );
 
@@ -22,16 +23,6 @@ $breakpoints-between: (
     "huge":    "screen and (min-width: $breakpoint-large + 1) and (max-width: $breakpoint-huge )"
 );
 /* stylelint-enable  */
-
-/// Generates media queries from breakpoints
-///
-/// @example scss
-///
-///    .element {
-///        @include breakpoint(large) {
-///            color: blue;
-///        }
-///    }
 
 @mixin breakpoint($name, $type: "") {
     @if map-has-key($breakpoints, $name) {

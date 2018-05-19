@@ -27,13 +27,17 @@ get_header();
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">
 				<?php
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content', 'search' );
-					endwhile;
-					the_posts_pagination(array(
-						'prev_text' => __( '<<', 'textdomain' ),
-		    			'next_text' => __( '>>', 'textdomain' ),
-					));
+					if( have_posts()):
+						while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/content', 'search' );
+						endwhile;
+						the_posts_pagination(array(
+							'prev_text' => __( '<<', 'textdomain' ),
+		    				'next_text' => __( '>>', 'textdomain' ),
+						));
+					else:
+						get_template_part( 'template-parts/content', 'none' );
+					endif;
 				?>
 			</main><!-- #main -->
 		</div><!-- #primary -->

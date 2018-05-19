@@ -38,14 +38,27 @@ article {
 	.article--b {
 		display: flex;
 
+		@include breakpoint(small) {
+			flex-wrap: wrap;
+		}
+
 		.article-img {
 			width: 270px;
+
+			@include breakpoint(small) {
+				width: 100%;
+			}
 		}
 
 		.article-content {
 			margin-top: 0;
 			padding: 0 20px;
 			width: calc(100% - 270px);
+
+			@include breakpoint(small) {
+				width: 100%;
+				padding: 20px 5px 0;
+			}
 
 			a {
 				text-decoration: none;
