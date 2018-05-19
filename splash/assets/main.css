@@ -391,6 +391,10 @@ body footer.site-footer .wrapper {
     flex-wrap: wrap;
   }
 }
+/* line 259, _splash.scss */
+body footer.site-footer .footer-right {
+  color: #fff;
+}
 @media screen and (max-width: 767px) {
   /* line 259, _splash.scss */
   body footer.site-footer .footer-right {
@@ -403,42 +407,42 @@ body footer.site-footer .wrapper {
     width: 100%;
   }
 }
-/* line 269, _splash.scss */
+/* line 271, _splash.scss */
 body footer.site-footer .footer-left {
   float: left;
 }
 @media screen and (max-width: 480px) {
-  /* line 269, _splash.scss */
+  /* line 271, _splash.scss */
   body footer.site-footer .footer-left {
     width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 277, _splash.scss */
+  /* line 279, _splash.scss */
   body footer.site-footer .copy {
     display: block;
     margin-top: 7px;
   }
 }
-/* line 285, _splash.scss */
+/* line 287, _splash.scss */
 body .site-title {
   font-family: "Great Vibes", cursivep;
   color: #fff;
   font-size: 100px;
 }
 @media screen and (max-width: 1240px) {
-  /* line 285, _splash.scss */
+  /* line 287, _splash.scss */
   body .site-title {
     font-size: 75px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 285, _splash.scss */
+  /* line 287, _splash.scss */
   body .site-title {
     font-size: 50px;
   }
 }
-/* line 299, _splash.scss */
+/* line 301, _splash.scss */
 body .site-description {
   color: #fff;
   font-size: 18px;
@@ -446,7 +450,7 @@ body .site-description {
   font-weight: 200;
 }
 @media screen and (max-width: 1240px) {
-  /* line 299, _splash.scss */
+  /* line 301, _splash.scss */
   body .site-description {
     font-size: 14px;
   }
