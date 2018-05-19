@@ -18,7 +18,6 @@
 	<meta name='robots' content='noindex,follow' />
 	<link rel='stylesheet' href='../wp-content/themes/hannashints/dist/main.css' type='text/css' media='all' />
 	<link rel='stylesheet' href='./assets/main.css' type='text/css' media='all' />
-	<script type='text/javascript' src='../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 </head>
 <body>
 	<div class="splash">
@@ -31,19 +30,19 @@
 				</div>
 				<div class="countdown">
 					<div class="digit">
-						<div class="num">3</div>
+						<div class="num" id="days">3</div>
 						<div class="label">Days</div>
 					</div>
 					<div class="digit">
-						<div class="num">18</div>
+						<div class="num" id="hrs">18</div>
 						<div class="label">Hours</div>
 					</div>
 					<div class="digit">
-						<div class="num">42</div>
+						<div class="num" id="mins">42</div>
 						<div class="label">Minutes</div>
 					</div>
 					<div class="digit">
-						<div class="num">29</div>
+						<div class="num" id="secs">29</div>
 						<div class="label">Seconds</div>
 					</div>
 				</div>
@@ -64,5 +63,7 @@
 			</div>
 		</footer>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type='text/javascript' src='./assets/main.js'></script>
 </body>
 </html>
