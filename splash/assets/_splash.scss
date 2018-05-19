@@ -2,53 +2,150 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 200;
 	color: #3f3f3f;
+	width: 100%;
+	overflow-x: hidden;
 
 	.splash {
 		display: block;
-		height: 100vh;
+		height: calc(100vh - 84px);
 		background-image: url(./imgs/splash.jpg);
 		background-color: #f2eaec;
-		background-size: cover;
+		background-size: 100%;
 		background-repeat: no-repeat;
-		min-height: 1277px;
-		max-width: 1920px;
-		margin: auto;
+		min-height: 905px;
+		width: 1920px;
+		position: absolute;
+		top: 0;
+		left: calc(50% - 960px);
+		z-index: 1;
+
+		@media screen and (max-width: 1600px) {
+			width: 1600px;
+			left: calc(50% - 800px);
+			min-height: 815px;
+		}
 
 		@media screen and (max-width: 1400px) {
-			max-width: 100%;
-			min-height: 934px;
-			background-size: 100%;
+			width: 1400px;
+			min-height: 740px;
+			left: calc(50% - 700px);
 		}
 
 		@media screen and (max-width: 1240px) {
-			min-height: 684px;
+			width: 1240px;
+			left: calc(50% - 620px);
+			min-height: 715px;
 		}
 
-		.wrapper {
-			max-width: 1400px;
+		@media screen and (max-width: 1024px) {
+			width: 1024px;
+			left: calc(50% - 512px);
+			min-height: 605px;
+		}
 
-			@media screen and (max-width: 1400px) {
-				max-width: 1024px;				
-			}
+		@media screen and (max-width: 767px) {
+			width: 767px;
+			height: calc(100vh - 107px);
+			left: 0;
+			min-height: 461px;
+		}
 
-			@media screen and (max-width: 1240px) {
-				max-width: 767px;
-			}
+		@media screen and (max-width: 480px) {
+			width: 100%;
+			min-height: 381px;
+			height: calc(100vh - 127px);
+		}
+	}
+
+	.wrapper {
+		max-width: 1400px;
+		height: 100%;
+		display: block;
+		position: relative;
+		z-index: 2;
+
+
+		@media screen and (max-width: 1400px) {
+			max-width: 1024px;				
+		}
+
+		@media screen and (max-width: 1240px) {
+			max-width: 767px;
+		}
+	}
+
+	.text {
+		position: absolute;
+		top: 59%;
+
+		@media screen and (max-width: 1600px) {
+			top: 465px;
+		}
+
+		@media screen and (max-width: 1400px) {
+			top: 400px;
+		}
+
+		@media screen and (max-width: 1240px) {
+			top: 360px;
+		}
+
+		@media screen and (max-width: 1024px) {
+			top: 300px;
+		}
+
+		@media screen and (max-width: 767px) {
+			top: 245px;
+			width: 100%;
+		}
+
+		@media screen and (max-width: 480px) {
+			top: 170px;
 		}
 
 		.heading {
-			position: absolute;
-			top: 50%;
-			padding-left: 12%;
+			padding-left: 37%;
+
+			@media screen and (max-width: 1600px) {
+				padding-left: 43%;
+			}
 
 			@media screen and (max-width: 1400px) {
-				top: 60%;
+				padding-left: 30%;
+			}
+
+			@media screen and (max-width: 1240px) {
+				padding-left: 15%;
+			}
+
+			@media screen and (max-width: 1024px) {
+				padding-left: 30%;
+			}
+
+			@media screen and (max-width: 767px) {
+				padding-left: 20%;
+			}
+
+			@media screen and (max-width: 480px) {
+				padding-left: 8%;
 			}
 
 			> div {
 				&:first-child,
 				&:last-child {
 					font-size: 32px;
+
+					@media screen and (max-width: 1024px) {
+						font-size: 24px;
+					}
+
+					@media screen and (max-width: 767px) {
+						font-size: 18px;
+					}
+
+					@media screen and (max-width: 480px) {
+						font-size: 16px;
+					}
 				}
 
 				&.gv {
@@ -56,13 +153,155 @@ body {
 					font-size: 125px;
 					color: #fe6f67;
 					margin: 20px auto 0;
+
+					@media screen and (max-width: 1024px) {
+						font-size: 100px;
+					}
+
+					@media screen and (max-width: 767px) {
+						font-size: 80px;
+					}	
+
+					@media screen and (max-width: 480px) {
+						font-size: 70px;
+					}	
 				}
 
 				&:last-child {
 					text-align: right;
 					margin-right: -80px;
+
+					@media screen and (max-width: 767px) {
+						text-align: left;
+						margin-left: 207px;
+					}
+
+					@media screen and (max-width: 480px) {
+						margin-right: -60px;
+					}
 				}
 			}
+		}
+
+		.countdown {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 40px;
+			padding-left: 18%;
+			width: 750px;
+			position: absolute;
+
+			@media screen and (max-width: 1024px) {
+				margin-top: 30px;
+			}
+
+			@media screen and (max-width: 767px) {
+				margin-top: 12px;
+				width: 91vw;
+				padding-left: 9vw;
+			}
+
+			@media screen and (max-width: 480px) {
+
+			}
+
+			.digit {
+				text-align: center;
+				font-size: 18px;
+
+				@media screen and (max-width: 480px) {
+					font-size: 14px;
+				}
+
+				.num {
+					font-weight: bold;
+					font-size: 50px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 40px;
+					}
+
+					@media screen and (max-width: 480px) {
+						font-size: 32px;
+					}
+				}
+			}
+		}
+	}
+
+	footer.site-footer {
+		text-align: center;
+		background: url('./imgs/crosshatch.png') 0 0 repeat #fe6f67;
+		min-height: 107px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px 0px;
+
+		@media screen and (max-width: 767px) {
+			padding: 16px 10px;
+			max-width: 100vw;
+
+			.wrapper {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			.wrapper {
+				flex-wrap: wrap;
+			}
+		}
+
+		.footer-right {
+			@media screen and (max-width: 767px) {
+				width: 45%;
+			}
+
+			@media screen and (max-width: 480px) {
+				width: 100%;
+			}
+		}
+
+		.footer-left {
+			float: left;
+			
+			@media screen and (max-width: 480px) {
+				width: 100%;
+			}
+		}
+
+		.copy {
+			@media screen and (max-width: 480px) {
+				display: block;
+				margin-top: 7px;
+			}
+		}
+	}
+
+	.site-title {
+		font-family: "Great Vibes", cursivep;
+		color: #fff;
+		font-size: 100px;	
+
+		@media screen and (max-width: 1240px) {
+			font-size: 75px;
+		}
+
+		@media screen and (max-width: 767px) {
+			font-size: 50px;
+		}
+	}
+
+	.site-description {
+		color: #fff;
+		font-size: 18px;
+		display: block;
+		font-weight: 200;
+
+		@media screen and (max-width: 1240px)  {
+			font-size: 14px;
 		}
 	}
 }

@@ -23,12 +23,46 @@
 <body>
 	<div class="splash">
 		<div class="wrapper">
-			<div class="heading">
-				<div>Something</div>
-				<div class="gv">Beautiful</div>
-				<div>Is Coming!</div>
+			<div class="text">
+				<div class="heading">
+					<div>Something</div>
+					<div class="gv">Beautiful</div>
+					<div>Is Coming!</div>
+				</div>
+				<div class="countdown">
+					<div class="digit">
+						<div class="num">3</div>
+						<div class="label">Days</div>
+					</div>
+					<div class="digit">
+						<div class="num">18</div>
+						<div class="label">Hours</div>
+					</div>
+					<div class="digit">
+						<div class="num">42</div>
+						<div class="label">Minutes</div>
+					</div>
+					<div class="digit">
+						<div class="num">29</div>
+						<div class="label">Seconds</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<footer class="site-footer">
+			<div class="wrapper">
+				<div class="footer-left">
+					<p class="site-title">Hanna's Hints</p>
+					<p class="site-description">A Subtitle Will Go Here And Describe It</p>
+				</div>
+				<div class="footer-right">
+					<a href="https://www.ksheamon.io" target="_blank">Designed &amp; developed by Kimberly Sheamon</a>
+					<span class="copy">
+						&copy; <?php echo date('Y');?>
+					</span>
+				</div>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
