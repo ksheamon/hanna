@@ -5,7 +5,7 @@ $(window).load(function(){
 });
 
 function calcDates() {
-	var goLive = new Date(2018, 5, 30, 10, 0, 0);
+	var goLive = new Date(2018, 7, 30, 10, 0, 0);
 	var now = $.now();
 
 	var delta = Math.abs(goLive - now) / 1000;
