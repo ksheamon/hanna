@@ -11,31 +11,51 @@ jQuery(document).ready(function(){
     
     var formfield;
     var img_id;
-    jQuery('.Image_button').live( "click", function(e) {
+    jQuery(document).on("click", '.Image_button', function(e) {
         e.preventDefault();
         var id = jQuery(this).attr("id")
         var btn = id.split("-");
         img_id = btn[1];
-        
-        jQuery('html').addClass('Image');
-        formfield = jQuery('#img-'+img_id).attr('name');
-        tb_show('', 'media-upload.php?type=image&TB_iframe=true');
-        return false;
+        formfield = jQuery('#img-'+img_id);
+		
+		var file_frame;
+		var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
+		var set_to_post_id = 0; // Set this
+			
+		if ( file_frame ) {
+			// Set the post ID to what we want
+			file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
+			// Open frame
+			file_frame.open();
+			return;
+		} else {
+			// Set the wp.media post id so the uploader grabs the ID we want when initialised
+			wp.media.model.settings.post.id = set_to_post_id;
+		}
+		// Create the media frame.
+		file_frame = wp.media.frames.file_frame = wp.media({
+			title: 'Select a image to upload',
+			button: {
+				text: 'Use this image',
+			},
+			multiple: false	// Set to true to allow multiple files to be selected
+		});
+		// When an image is selected, run a callback.
+		file_frame.on( 'select', function() {
+			// We set multiple to false so only get one image from the uploader
+			attachment = file_frame.state().get('selection').first().toJSON();
+			// Do something with attachment.id and/or attachment.url here
+			formfield.val( attachment.url );
+			if(formfield.parent().find("img").length > 0)
+				formfield.parent().find("img").attr("src", attachment.url);
+			else
+				formfield.parent().find("span").append('<a target="_blank" href="'+attachment.url+'"><img width="25" src="'+attachment.url+'" /></a>');
+			// Restore the main post ID
+			wp.media.model.settings.post.id = wp_media_post_id;
+		});
+		// Finally, open the modal
+		file_frame.open();
     });
-	
-    window.original_send_to_editor = window.send_to_editor;
-    window.send_to_editor = function(html){
-        if (formfield) {
-            fileurl = jQuery(html).attr('src');
-            jQuery('#img-'+img_id).val(fileurl);
-            var thumb = '<img width="25" src="'+fileurl+'">';
-            jQuery('#miu_images '+'#row-'+img_id+' span').html(thumb);
-            tb_remove();
-            jQuery('html').removeClass('Image');
-        } else {
-            window.original_send_to_editor(html);
-        }
-    };
 });
 
 function addRow(image_url){
@@ -47,7 +67,7 @@ function addRow(image_url){
     +'&nbsp;<span>';
     if(image_url)
     {
-      emptyRowTemplate+= '<img width="25" src="'+image_url+'">';
+      emptyRowTemplate+= '<a target="_blank" href="'+image_url+'"><img width="25" src="'+image_url+'"></a>';
 
     }
     emptyRowTemplate+='</span>'

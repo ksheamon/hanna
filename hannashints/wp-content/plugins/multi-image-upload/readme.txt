@@ -3,8 +3,8 @@ Contributors: tahiryasin
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=63N6XHBLFRC3U
 Tags: multi, image, upload, metabox
 Requires at least: 2.8
-Tested up to: 4.8
-Stable tag: 1.2
+Tested up to: 5.1.1
+Stable tag: 2.0
 License: GPLv2 or later
 
 This plugin adds a meta box to upload multiple images for posts and pages.
@@ -39,6 +39,12 @@ Use this plugin if you want to quickly add a feature to upload multiple images f
 1. screenshot-1.png
 
 == Changelog ==
+= 2.0 =
+* Old tb_show method replace with latest Media plugin
+* Image thumbnail updates as soon as you chose image
+* Links added on image thumbails that open the image in new tab
+* JQuery `.live()` replace with `.on()`
+
 = 1.2 =
 * Compatibility issues with latest WP version fixed.
 * Image thumbnails displayed in admin meta box.
