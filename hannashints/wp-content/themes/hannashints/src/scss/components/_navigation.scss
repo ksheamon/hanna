@@ -1,0 +1,204 @@
+#site-navigation {
+	border-bottom: 1px solid #000;
+	margin-bottom: 50px;
+
+	@include breakpoint(small) {
+		margin-bottom: 0;
+		height: 50px;
+		position: relative;
+    	top: 0;
+	}
+
+	.popout {
+		@include breakpoint(small) {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			background: rgba(25, 25, 25, .9);
+			color: white;
+			top: 0px;
+			left: -100%;
+			overflow:auto;
+			transition: all 0.3s ease-in-out;
+			padding-top: 60px;
+			z-index: 9;
+
+			&.is-open {
+				left: 0;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+			}
+		}
+
+		> div {
+			display: inline-block;
+			vertical-align: middle;
+
+			@include breakpoint(small) {
+				display: block;
+				order: 2;
+			}
+		}
+
+		.block--search {
+			position: relative;
+
+			@include breakpoint(small) {
+				order: 1;
+				width: 100%;
+			}
+
+			.search--toggle {
+				background: url('./imgs/lens.png') 0 0 no-repeat transparent;
+				height: 26px;
+				width: 26px;
+				cursor: pointer;
+
+				@include breakpoint(small) {
+					display: none;
+				}
+			}
+
+			form {
+				height: 0;
+				padding: 0;
+				overflow: hidden;
+				position: absolute;
+				margin-top: 22px;
+				right: calc(100% - 32px);
+				width: 320px;
+				background: #fff;
+				box-shadow: 1px 2px 5px rgba(0,0,0,.5);
+				transition: all 0.3s ease-in-out;
+
+				@include breakpoint(small) {
+					height: auto;
+					width: calc(100% - 30px);
+					position: relative;
+					left: auto;
+					right: auto;
+					margin: auto;
+					box-shadow: none;
+					border: none;
+					padding: 10px;
+					background: none;
+				}
+
+				[type="search"] {
+					width: 300px;
+					border-width: 0 0 1px 0;
+					border-radius: 0;
+
+					@include breakpoint(small) {
+						width: 100%;
+						border-width: 0 0 1px;
+						background: none;
+					}
+				}
+
+				[type="submit"] {
+					@include inline-svg-icon("arrow-r", white, center, 18px);
+
+					position: absolute;
+					font-size: 0;
+					height: 32px;
+					width: 32px;
+					right: 10px;
+					bottom: 10px;
+					border-radius: 0;
+					border: none;
+					background-color: $color-search-bg;
+
+					@include breakpoint(small) {
+						background: url('./imgs/lens_white.png') 0 0 no-repeat transparent;
+						height: 26px;
+						width: 26px;
+						bottom: 13px;
+						cursor: pointer;
+						color: #fff;
+					}
+				}
+			}
+
+			&.is-open {
+				form {
+					height: auto;
+					padding: 10px;
+					overflow: visible;
+				}
+			}
+		}
+	}
+}
+
+.site-branding {
+	@include breakpoint(small) {
+		padding-top: 75px;
+	}
+}
+
+.main-navigation {
+	ul {
+		@include breakpoint(small) {
+			display: block;
+		}
+	}
+
+	li {
+		padding: 25px;
+		float: none;
+		display: inline-block;
+
+		&.current-menu-item {
+			color: $color-accent;
+		}
+
+		@include breakpoint(small) {
+			display: block;
+			padding: 15px;
+			text-align: left;
+		}
+	}
+}
+
+@include breakpoint(small) {
+	#toggle {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		width: 28px;
+		height: 24px;		 
+		cursor: pointer;
+		z-index: 99;
+
+		span {
+			width: 28px;
+		    height: 3px;
+		    background-color: #333;
+		    margin: 5px 0;
+		    transition: 0.4s;
+		    display: block;
+		}
+
+		&.is-open {
+			position: fixed;
+			
+			span {
+				background-color: #fff;
+
+				&:first-child {
+					transform: rotate(-45deg) translate(-4px, 3px);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: rotate(45deg) translate(-8px, -8px);
+				}
+			}
+		}
+	}
+}

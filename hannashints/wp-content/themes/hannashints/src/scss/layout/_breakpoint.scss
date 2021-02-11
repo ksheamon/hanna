@@ -1,0 +1,104 @@
+/* stylelint-disable */
+$breakpoints: (
+    "tiny":   "screen and (max-width: $breakpoint-tiny)",
+    "small":  "screen and (max-width: $breakpoint-small)",
+    "medium": "screen and (max-width: $breakpoint-medium)",
+    "large":  "screen and (max-width: $breakpoint-large)",
+    "xl":  "screen and (max-width: $breakpoint-xl)",
+    "huge":   "screen and (max-width: $breakpoint-huge)"
+);
+
+$breakpoints-at-least: (
+    "tiny":   "screen and (min-width:  $breakpoint-tiny + 1)",
+    "small":  "screen and (min-width:  $breakpoint-small + 1)",
+    "medium": "screen and (min-width:  $breakpoint-medium + 1)",
+    "large":  "screen and (min-width: $breakpoint-large + 1)",
+    "huge":   "screen and (min-width: $breakpoint-huge + 1)"
+);
+
+$breakpoints-between: (
+    "tiny":    "screen and (max-width: $breakpoint-tiny)",
+    "small":   "screen and (min-width: $breakpoint-tiny + 1) and (max-width:  $breakpoint-small)",
+    "large":   "screen and (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-large)",
+    "huge":    "screen and (min-width: $breakpoint-large + 1) and (max-width: $breakpoint-huge )"
+);
+/* stylelint-enable  */
+
+@mixin breakpoint($name, $type: "") {
+    @if map-has-key($breakpoints, $name) {
+        @if $type == "between" {
+            @media #{inspect(map-get($breakpoints-between, $name))} {
+                @content;
+            }
+        }
+
+        @else if $type == "at-least" {
+            @media #{inspect(map-get($breakpoints-at-least, $name))} {
+                @content;
+            }
+        }
+
+        @else {
+            @media #{inspect(map-get($breakpoints, $name))} {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        @warn "Couldn't find a breakpoint named `#{$name}`.";
+    }
+}
+
+// -------------------------------
+// Media related
+
+.is-mobile {
+    &:not(.is-tablet):not(.is-desktop) {
+        @include breakpoint(small, "at-least") {
+            display: none !important;
+        }
+    }
+}
+
+.is-tablet {
+    &:not(.is-mobile):not(.is-desktop) {
+        @include breakpoint(small) {
+            display: none !important;
+        }
+
+        @include breakpoint(large, "at-least") {
+            display: none !important;
+        }
+    }
+}
+
+.is-desktop {
+    &:not(.is-mobile):not(.is-tablet) {
+        @include breakpoint(large) {
+            display: none !important;
+        }
+    }
+}
+
+.is-mobile.is-tablet:not(.is-desktop) {
+    @include breakpoint(large, "at-least") {
+        display: none !important;
+    }
+}
+
+.is-mobile.is-desktop:not(.is-tablet) {
+    @include breakpoint(large, "between") {
+        display: none !important;
+    }
+}
+
+.is-tablet.is-desktop:not(.is-mobile) {
+    @include breakpoint(small) {
+        display: none !important;
+    }
+}
+
+// mobile: < mobile
+// tablet: > mobile < desktop
+// desktop: > desktop
